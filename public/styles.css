@@ -1,0 +1,206 @@
+/* ---------- Cores e variáveis ---------- */
+:root {
+  --verde-qq:         #165414;
+  --verde-claro:      #e6f7ec;
+  --fonte-base:       "Arial", sans-serif;
+  --btn-font-size:    1.2rem;
+  --input-font-size:  1.1rem;
+  --resultado-size:   1.3rem;
+  --btn-padding:      1rem 1.5rem;
+  --fundo-overlay:    rgba(0, 0, 0, 0.8);
+}
+
+/* ---------- Reset básico ---------- */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: var(--fonte-base);
+}
+
+/* ---------- Fundo geral com imagem e overlay translúcido ---------- */
+body {
+  position: relative;
+  background-image: url('./assets/bannerQQ-desktop.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100vh;
+  color: #fff;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
+/* Overlay escuro e quase transparente */
+body::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--fundo-overlay);
+  z-index: -1;
+}
+
+/* ---------- Cabeçalho ---------- */
+.app-header {
+  background: var(--verde-qq);
+  color: #fff;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.logo {
+  width: 40px;
+  height: 40px;
+}
+
+/* ---------- Conteúdo principal ---------- */
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 2rem 1rem;
+  width: 100%;
+}
+
+/* Para inputs e botões */
+.manual-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+  width: 100%;
+  max-width: 500px;
+}
+
+.manual-wrapper input[type="text"] {
+  flex: 1 1 200px;
+  font-size: var(--input-font-size);
+  padding: 0.8rem 1rem;
+  border-radius: 15px;
+  border: none;
+  width: 100%;
+  box-sizing: border-box;
+  background-color: #f9f9f9;
+}
+
+.manual-wrapper button,
+#btn-toggle-mode,
+#btn-scan,
+#btn-site {
+  font-size: var(--btn-font-size);
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 15px;
+  background: var(--verde-qq);
+  color: #fff;
+  cursor: pointer;
+  transition: filter 0.2s, transform 0.3s ease-in-out;
+  width: auto;
+  min-width: 200px;
+  box-sizing: border-box;
+  text-align: center;
+  display: inline-block;
+}
+
+.manual-wrapper button:hover,
+#btn-toggle-mode:hover,
+#btn-scan:hover,
+#btn-site:hover {
+  filter: brightness(0.9);
+  transform: scale(1.05);
+}
+
+/* Estilo para o botão "Ver no site" */
+#btn-site {
+  background: #0078d7; /* Cor de fundo azul */
+  color: #fff; /* Cor do texto branca */
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 25px; /* Borda arredondada */
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  text-align: center;
+  width: 100%;
+  max-width: 250px; /* Limite máximo de largura */
+  margin-top: 10px;
+}
+
+#btn-site:hover {
+  background-color: #005a9c; /* Cor de fundo ao passar o mouse */
+  transform: scale(1.05); /* Aumenta um pouco o tamanho ao passar o mouse */
+}
+
+#btn-site:focus {
+  outline: none; /* Remove o contorno ao clicar no botão */
+  box-shadow: 0 0 5px rgba(0, 120, 215, 0.5); /* Adiciona um sombreado sutil ao focar */
+}
+
+/* ---------- Vídeo do Scanner ---------- */
+video {
+  width: 100%;
+  max-width: 400px;
+  height: 300px; /* Limita o tamanho do vídeo */
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  margin-bottom: 20px;
+}
+
+/* ---------- Resultado exibido ---------- */
+#resultado {
+  margin-top: 1rem;
+  font-size: var(--resultado-size);
+  font-weight: bold;
+  text-align: center;
+  max-width: 90%;
+  word-wrap: break-word;
+  padding: 0 1rem;
+}
+
+/* Destaque na resposta com strong */
+#resultado strong {
+  display: block;
+  font-size: 1.3rem;
+  color: #ffeb3b;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 0.5rem;
+  border-radius: 4px;
+  margin-top: 0.5rem;
+}
+
+/* ---------- Rodapé ---------- */
+footer {
+  padding: 1rem;
+  text-align: center;
+  font-size: 20px;
+  color: #24e924ec;
+}
+
+/* ---------- Responsividade para telas menores ---------- */
+@media (max-width: 768px) {
+  .app-header {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .logo {
+    width: 40px;
+    height: 40px;
+  }
+
+  #btn-toggle-mode,
+  #btn-scan,
+  #btn-site {
+    width: 100%;
+  }
+
+  .manual-wrapper input[type="text"],
+  .manual-wrapper button {
+    flex: 1 1 100%;
+  }
+}
