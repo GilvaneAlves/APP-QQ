@@ -18,20 +18,17 @@
   font-family: var(--fonte-base);
 }
 
-/* ---------- Fundo geral com imagem e overlay translúcido ---------- */
+/* ---------- Fundo geral ---------- */
 body {
   position: relative;
-  background-image: url('./assets/bannerQQ-desktop.png');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  background: url('./assets/bannerQQ-desktop.png') center/cover no-repeat;
   min-height: 100vh;
   color: #fff;
   display: grid;
   grid-template-rows: auto 1fr auto;
 }
 
-/* Overlay escuro e quase transparente */
+/* Overlay escuro */
 body::before {
   content: '';
   position: absolute;
@@ -50,6 +47,9 @@ body::before {
   gap: 10px;
   font-size: 18px;
   font-weight: 600;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
 }
 
 .logo {
@@ -57,7 +57,7 @@ body::before {
   height: 40px;
 }
 
-/* ---------- Conteúdo principal ---------- */
+/* ---------- Conteúdo ---------- */
 main {
   display: flex;
   flex-direction: column;
@@ -67,7 +67,7 @@ main {
   width: 100%;
 }
 
-/* Para inputs e botões */
+/* ---------- Inputs e botões ---------- */
 .manual-wrapper {
   display: flex;
   flex-wrap: wrap;
@@ -84,8 +84,8 @@ main {
   border-radius: 15px;
   border: none;
   width: 100%;
-  box-sizing: border-box;
   background-color: #f9f9f9;
+  color: #333;
 }
 
 .manual-wrapper button,
@@ -102,56 +102,41 @@ main {
   transition: filter 0.2s, transform 0.3s ease-in-out;
   width: auto;
   min-width: 200px;
-  box-sizing: border-box;
   text-align: center;
-  display: inline-block;
 }
 
-.manual-wrapper button:hover,
-#btn-toggle-mode:hover,
-#btn-scan:hover,
-#btn-site:hover {
+button:hover {
   filter: brightness(0.9);
   transform: scale(1.05);
 }
 
-/* Estilo para o botão "Ver no site" */
+/* ---------- Botão "Ver no site" ---------- */
 #btn-site {
-  background: #0078d7; /* Cor de fundo azul */
-  color: #fff; /* Cor do texto branca */
-  padding: 1rem 2rem;
-  font-size: 1rem;
-  border: none;
-  border-radius: 25px; /* Borda arredondada */
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-  text-align: center;
-  width: 100%;
-  max-width: 250px; /* Limite máximo de largura */
+  background: #0078d7;
+  max-width: 250px;
   margin-top: 10px;
 }
 
 #btn-site:hover {
-  background-color: #005a9c; /* Cor de fundo ao passar o mouse */
-  transform: scale(1.05); /* Aumenta um pouco o tamanho ao passar o mouse */
+  background-color: #005a9c;
 }
 
 #btn-site:focus {
-  outline: none; /* Remove o contorno ao clicar no botão */
-  box-shadow: 0 0 5px rgba(0, 120, 215, 0.5); /* Adiciona um sombreado sutil ao focar */
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 120, 215, 0.5);
 }
 
 /* ---------- Vídeo do Scanner ---------- */
 video {
   width: 100%;
   max-width: 400px;
-  height: 300px; /* Limita o tamanho do vídeo */
+  height: 300px;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   margin-bottom: 20px;
 }
 
-/* ---------- Resultado exibido ---------- */
+/* ---------- Resultado ---------- */
 #resultado {
   margin-top: 1rem;
   font-size: var(--resultado-size);
@@ -162,7 +147,6 @@ video {
   padding: 0 1rem;
 }
 
-/* Destaque na resposta com strong */
 #resultado strong {
   display: block;
   font-size: 1.3rem;
@@ -181,26 +165,18 @@ footer {
   color: #24e924ec;
 }
 
-/* ---------- Responsividade para telas menores ---------- */
+/* ---------- Responsividade ---------- */
 @media (max-width: 768px) {
   .app-header {
     flex-direction: column;
-    text-align: center;
-  }
-
-  .logo {
-    width: 40px;
-    height: 40px;
   }
 
   #btn-toggle-mode,
   #btn-scan,
-  #btn-site {
-    width: 100%;
-  }
-
+  #btn-site,
   .manual-wrapper input[type="text"],
   .manual-wrapper button {
-    flex: 1 1 100%;
+    width: 100%;
+    min-width: unset;
   }
 }

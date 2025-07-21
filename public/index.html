@@ -9,36 +9,22 @@
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
-    <!-- ------------- CABEÇALHO ------------- -->
     <header class="app-header">
       <img src="assets/icon-192.png" alt="Logo ScannerQQ" class="logo" />
       <span>Scanner de Produtos Quero‑Quero</span>
-
-      <!-- Botão de alternância entre modo Desktop e Celular -->
       <button id="btn-toggle-mode">Modo Celular</button>
     </header>
 
-    <!-- ------------- CONTEÚDO ------------- -->
     <main>
-      <!-- Botão para ativar scanner, agora abaixo da câmera -->
       <button id="btn-scan">Iniciar Scanner</button>
-      
-      <!-- Vídeo da câmera para leitura do código de barras -->
       <video id="preview" playsinline autoplay muted style="display:none"></video>
-
-      <!-- Resultado após o escaneamento -->
       <div id="resultado">Aponte a câmera para o código de barras.</div>
 
-      <!-- Botão para redirecionamento para o site -->
-      <button id="btn-site" style="display:none">Ver no site Quero‑Quero</button>
-
-      <!-- Busca manual por EAN -->
       <div class="manual-wrapper">
         <input type="text" id="manual-ean" placeholder="Digite o código EAN" />
         <button id="btn-manual">Buscar por EAN</button>
       </div>
 
-      <!-- Busca manual por Material -->
       <div class="manual-wrapper">
         <input type="text" id="manual-material" placeholder="Digite o código SKU" />
         <button id="btn-manual-material">Buscar por SKU</button>
@@ -47,7 +33,6 @@
 
     <footer>Versão Teste By DEV Gilvane Alves • ScannerQQ</footer>
 
-    <!-- ZXing e scripts -->
     <script src="https://cdn.jsdelivr.net/npm/@zxing/library@0.18.6/umd/index.min.js"></script>
     <script src="./js/scan.js"></script>
   </body>
