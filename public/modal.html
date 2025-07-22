@@ -1,0 +1,84 @@
+<h2>📘 Ajuda – ScannerQQ</h2>
+
+<h3>🧾 Sobre o Projeto</h3>
+<p><strong>ScannerQQ</strong> é uma aplicação web que permite identificar produtos através da leitura de códigos de barras (EAN-13) ou digitando manualmente o código EAN ou o número do material. Ele consulta uma base local (<code>produtos.json</code>) e retorna a descrição do item com um link direto para o site da Quero‑Quero.</p>
+
+<h3>🔧 Funcionalidades</h3>
+<ul>
+  <li>📷 Leitura de códigos de barras usando a câmera</li>
+  <li>⌨ Busca manual por código EAN</li>
+  <li>🛠 Busca por número do material</li>
+  <li>🔗 Link direto para o site da Quero‑Quero</li>
+  <li>✅ Modo Celular e Desktop</li>
+</ul>
+
+<h3>📲 Como Usar</h3>
+<p><strong>Modo Celular:</strong></p>
+<ol>
+  <li>Clique em <strong>Modo Celular</strong></li>
+  <li>Aponte a câmera para um código de barras</li>
+  <li>Produto será identificado e exibido</li>
+</ol>
+
+<p><strong>Busca Manual:</strong></p>
+<ul>
+  <li>Digite o <strong>código EAN</strong> ou o <strong>número do material</strong></li>
+  <li>Clique em <strong>Buscar</strong> ou pressione Enter</li>
+</ul>
+
+<h3>💾 Estrutura da base (produtos.json)</h3>
+<pre><code>[
+  [
+    {
+      "Material": "123456",
+      "Código EAN/UPC": "7891234567890",
+      "Texto breve material": "Produto Exemplo"
+    }
+  ]
+]</code></pre>
+
+<h3>🧪 Tecnologias Usadas</h3>
+<ul>
+  <li>JavaScript Puro (Vanilla)</li>
+  <li>ZXing (Scanner de Código de Barras)</li>
+  <li>HTML5, CSS3</li>
+  <li>API MediaDevices</li>
+</ul>
+
+<h3>⚠️ Problemas Comuns</h3>
+<table border="1" cellpadding="6" cellspacing="0" style="border-collapse: collapse; width: 100%;">
+  <thead>
+    <tr>
+      <th>Problema</th>
+      <th>Causa</th>
+      <th>Solução</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>❌ "Erro ao acessar a câmera"</td>
+      <td>Permissão negada ou navegador</td>
+      <td>Use o Chrome e permita o acesso</td>
+    </tr>
+    <tr>
+      <td>❌ Código EAN não encontrado</td>
+      <td>Não está na base local</td>
+      <td>Atualize o arquivo produtos.json</td>
+    </tr>
+    <tr>
+      <td>❌ Material não encontrado</td>
+      <td>Material digitado incorretamente</td>
+      <td>Verifique a digitação</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>📬 Contato</h3>
+<p>
+  E-mail: <a href="mailto:gilvanealvesdias@gmail.com">gilvanealvesdias@gmail.com</a><br />
+  Telefone: <a href="tel:+5551999709417">(51) 99970‑9417</a>
+</p>
+
+<p style="margin-top: 16px; font-size: 0.9em; color: #666;">
+  Versão: 1.0 – Desenvolvido por Gilvane Alves
+</p>

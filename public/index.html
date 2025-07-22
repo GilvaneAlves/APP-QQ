@@ -1,39 +1,53 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="manifest" href="./manifest.json" />
-    <meta name="theme-color" content="#0078d7" />
-    <title>Scanner Quero‑Quero</title>
-    <link rel="stylesheet" href="./styles.css" />
-  </head>
-  <body>
-    <header class="app-header">
-      <img src="assets/icon-192.png" alt="Logo ScannerQQ" class="logo" />
-      <span>Scanner de Produtos Quero‑Quero</span>
-      <button id="btn-toggle-mode">Modo Celular</button>
-    </header>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="manifest" href="./manifest.json" />
+  <meta name="theme-color" content="#0078d7" />
+  <title>Scanner Quero‑Quero</title>
+  <link rel="stylesheet" href="./styles.css" />
+  <link rel="stylesheet" href="./modal.css" />
+</head>
+<body>
+  <header class="app-header">
+    <img src="assets/icon-192.png" alt="Logo ScannerQQ" class="logo" />
+    <span>Scanner de Produtos Quero‑Quero</span>
+    <button id="btn-toggle-mode">Modo Celular</button>
+  </header>
 
-    <main>
-      <button id="btn-scan">Iniciar Scanner</button>
-      <video id="preview" playsinline autoplay muted style="display:none"></video>
-      <div id="resultado">Aponte a câmera para o código de barras.</div>
+  <main>
+    <button id="btn-scan">Iniciar Scanner</button>
+    <video id="preview" playsinline autoplay muted style="display:none"></video>
+    <div id="resultado">Aponte a câmera para o código de barras.</div>
 
-      <div class="manual-wrapper">
-        <input type="text" id="manual-ean" placeholder="Digite o código EAN" />
-        <button id="btn-manual">Buscar por EAN</button>
-      </div>
+    <div class="manual-wrapper">
+      <input type="text" id="manual-ean" placeholder="Digite o código EAN" />
+      <button id="btn-manual">Buscar por EAN</button>
+    </div>
 
-      <div class="manual-wrapper">
-        <input type="text" id="manual-material" placeholder="Digite o código SKU" />
-        <button id="btn-manual-material">Buscar por SKU</button>
-      </div>
-    </main>
+    <div class="manual-wrapper">
+      <input type="text" id="manual-material" placeholder="Digite o código SKU" />
+      <button id="btn-manual-material">Buscar por SKU</button>
+    </div>
+  </main>
 
-    <footer>Versão Teste By DEV Gilvane Alves • ScannerQQ</footer>
+  <footer>Versão Teste By DEV Gilvane Alves • ScannerQQ</footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/@zxing/library@0.18.6/umd/index.min.js"></script>
-    <script src="./js/scan.js"></script>
-  </body>
+  <!-- Botão de Ajuda -->
+<button id="btn-ajuda" class="ajuda-completa" title="Ajuda">❓ Ajuda</button>
+
+
+  <!-- Modal de Ajuda -->
+  <div id="modal-ajuda">
+    <div class="conteudo" id="modal-ajuda-conteudo">
+      <!-- Conteúdo da ajuda será carregado aqui -->
+      <span class="fechar-modal" id="fechar-ajuda">&times;</span>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@zxing/library@0.18.6/umd/index.min.js"></script>
+  <script src="./js/scan.js"></script>
+  <script src="./js/modal.js"></script>
+</body>
 </html>
