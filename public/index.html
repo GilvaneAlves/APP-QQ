@@ -2,18 +2,21 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="manifest" href="./manifest.json" />
-  <meta name="theme-color" content="#0078d7" />
   <title>Scanner Quero‑Quero</title>
   <link rel="stylesheet" href="./styles.css" />
   <link rel="stylesheet" href="./modal.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="manifest" href="./manifest.json" />
+  <meta name="theme-color" content="#0078d7" />
 </head>
 <body>
   <header class="app-header">
     <img src="assets/icon-192.png" alt="Logo ScannerQQ" class="logo" />
     <span>Scanner de Produtos Quero‑Quero</span>
     <button id="btn-toggle-mode">Modo Celular</button>
+    <button id="btn-logout" style="margin-left: 10px; background:#d9534f; color:white; border:none; cursor:pointer; padding:8px 12px; border-radius:4px;">
+      Sair
+    </button>
   </header>
 
   <main>
@@ -35,19 +38,32 @@
   <footer>Versão Teste By DEV Gilvane Alves • ScannerQQ</footer>
 
   <!-- Botão de Ajuda -->
-<button id="btn-ajuda" class="ajuda-completa" title="Ajuda">❓ Ajuda</button>
-
+  <button id="btn-ajuda" class="ajuda-completa" title="Ajuda">❓ Ajuda</button>
 
   <!-- Modal de Ajuda -->
   <div id="modal-ajuda">
     <div class="conteudo" id="modal-ajuda-conteudo">
-      <!-- Conteúdo da ajuda será carregado aqui -->
       <span class="fechar-modal" id="fechar-ajuda">&times;</span>
+      <!-- Conteúdo da ajuda será carregado aqui -->
     </div>
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/@zxing/library@0.18.6/umd/index.min.js"></script>
   <script src="./js/scan.js"></script>
   <script src="./js/modal.js"></script>
+
+  <script>
+    // Proteção básica de acesso
+    if(localStorage.getItem('logado') !== 'true') {
+      alert('Você precisa estar logado para acessar esta página.');
+      window.location.href = 'login.html';
+    }
+
+    // Botão sair (logout)
+    document.getElementById('btn-logout').addEventListener('click', () => {
+      localStorage.removeItem('logado');
+      window.location.href = 'login.html';
+    });
+  </script>
 </body>
 </html>
